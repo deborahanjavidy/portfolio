@@ -119,16 +119,22 @@
             </div>
             <div class="cv2-section cv2-section-langues">
               <h4>Langues</h4>
-              <ul>
-                <li>Français <span class="cv2-points">●●●●●</span></li>
-                <li>Anglais <span class="cv2-points">●●●○○</span></li>
-              </ul>
+              <div class="cv2-lang-block">
+                <span class="cv2-lang-label">Français</span>
+                <span class="cv2-points">●●●●●</span>
+                <div class="cv2-lang-desc">Très bon niveau, oral et écrit</div>
+              </div>
+              <div class="cv2-lang-block">
+                <span class="cv2-lang-label">Anglais</span>
+                <span class="cv2-points">●●●○○</span>
+                <div class="cv2-lang-desc">Niveau intermédiaire : lecture technique, documentation, échange simple</div>
+              </div>
             </div>
             <div class="cv2-section cv2-section-interets">
               <h4>Centres d'intérêt</h4>
               <ul>
-                <li><span class="cv2-dot"></span> Lecture</li>
-                <li><span class="cv2-dot"></span> Programmation</li>
+                <li><span class="cv2-dot"></span> Piano (pratique personnelle)</li>
+                <li><span class="cv2-dot"></span> Documentaires (technologie, histoire, société)</li>
               </ul>
             </div>
           </div>
@@ -145,28 +151,65 @@
             </div>
             <div class="cv2-profil">
               <h4>Profil</h4>
-              <p>Étudiante motivée en informatique, je cherche à développer mes compétences techniques et professionnelles à travers un stage pratique. Sérieuse, rigoureuse et curieuse, je souhaite appliquer concrètement mes connaissances académiques dans un environnement stimulant.</p>
+              <p>Étudiante motivée en informatique, passionnée par le développement web et les technologies numériques. À la recherche d'un stage pratique, je souhaite mettre en œuvre mes compétences en HTML, CSS, JavaScript, PHP, Node.js, Git/GitHub et MySQL. Curieuse, rigoureuse et déterminée, je suis prête à contribuer à des projets innovants et à approfondir mes acquis dans un environnement dynamique.</p>
             </div>
             <div class="cv2-section">
-              <h4>Formation</h4>
-              <ul>
-                <li><b>Licence 2</b>, INSI, Antananarivo <span class="cv2-date">de 2025 à ce jour</span></li>
-                <li><b>Licence 1</b>, INSI, Antananarivo <span class="cv2-date">de oct. 2024 à juil. 2025</span></li>
-                <li><b>Bac Série D</b>, Educ Plus, Antananarivo <span class="cv2-date">de sept. 2023 à juin 2024</span></li>
-              </ul>
-            </div>
-            <div class="cv2-section">
-              <h4>Réalisations</h4>
+              <h4 class="cv2-titre-formation">Formation</h4>
+              <span class="cv2-soustitre">Parcours académique</span>
               <ul class="cv2-list-points">
-                <li>Participation à deux hackathons interclasses axés sur le DevOps, m'ayant permis de développer mes compétences en travail d'équipe et en collaboration sur des projets techniques.</li>
-                <li>Participation à un hackathon interclasse sur le CTF, m'ayant appris à résoudre des défis de cybersécurité et à renforcer mes capacités d'analyse et de logique.</li>
+                <li><strong>Licence 2 (en cours)</strong> – INSI, Antananarivo, A venir<br><span class="cv2-formation-desc">Études en informatique, spécialité Réseaux et Systèmes</span></li>
+                <li><strong>Licence 1</strong> – INSI, Antananarivo, Oct. 2024 – Juil. 2025<br><span class="cv2-formation-desc">Études en informatique générale</span></li>
+                <li><strong>Baccalauréat série D</strong> – Educ Plus, Antananarivo, Sept. 2023 – Juin 2024<br><span class="cv2-formation-desc">Sciences générales, Mention Assez-Bien</span></li>
               </ul>
+              <div class="cv2-mini-section">
+                <span class="cv2-soustitre">Formation en ligne</span>
+                <!-- Ajoute ici tes formations/certifications en ligne -->
+              </div>
+            </div>
+            <div class="cv2-section">
+              <h4 class="cv2-titre-realisations">Réalisations</h4>
+              <div class="cv2-mini-section">
+                <span class="cv2-soustitre">Hackathons</span>
+                <ul class="cv2-list-points">
+                  <li>
+                    <div><strong>DevOps – Rise Up Madagascar</strong></div>
+                    <div>Développement d'un site d'accompagnement pour producteurs agricoles.</div>
+                    <div><span class="cv2-objectif">Objectif :</span> améliorer le rendement, faciliter l'emploi rural, et proposer un suivi technologique durable.</div>
+                    <div class="cv2-groupe">Groupe de 4 personnes</div>
+                  </li>
+                  <li>
+                    <div><strong>DevOps – E-Tsidika</strong></div>
+                    <div>Création d'un musée virtuel interactif pour artistes malgaches, avec animation 3D immersive et une IA pour guider les visiteurs.</div>
+                    <div><span class="cv2-objectif">Objectif :</span> démocratiser l'art et soutenir la scène locale.</div>
+                    <div class="cv2-groupe">Groupe de 4 personnes</div>
+                  </li>
+                  <li>
+                    <div><strong>Hackathon – CTF (Capture The Flag)</strong></div>
+                    <div>Renforcement des compétences en cybersécurité via la résolution de vulnérabilités en équipe dans un environnement compétitif.</div>
+                    <div class="cv2-groupe">Groupe de 3 personnes</div>
+                  </li>
+                </ul>
+              </div>
+              <div class="cv2-mini-section">
+                <span class="cv2-soustitre">Projets personnels</span>
+                <ul class="cv2-list-points">
+                  <li>
+                    <strong>Portfolio personnel</strong> Site web moderne et responsive présentant mon parcours, mes compétences et mes réalisations.<br>
+                    <a href="http://exemple.com/portfolio" target="_blank" rel="noopener" class="cv2-projet-lien">Voir le portfolio</a>
+                  </li>
+                  <li>
+                    <strong>Générateur de site web avec IA</strong> Outil pour créer automatiquement des sites web personnalisés grâce à l'intelligence artificielle.<br>
+                    <a href="http://exemple.com/ai-site-generator" target="_blank" rel="noopener" class="cv2-projet-lien">Voir le projet</a>
+                  </li>
+                </ul>
+              </div>
             </div>
             <div class="cv2-section">
               <h4>Compétences</h4>
-              <ul class="cv2-list-competences-flex">
-                <li><span class="cv2-competence-label"><b>Développement web (niveau intermédiaire)</b></span><span class="cv2-competence-sep"> : </span><span class="cv2-competence-tech">HTML, CSS, Sass, JavaScript</span></li>
-                <li><span class="cv2-competence-label"><b>Bureautique</b></span><span class="cv2-competence-sep"> : </span><span class="cv2-competence-tech">Bonne maîtrise de Word, PowerPoint et Excel</span></li>
+              <ul class="cv2-list-points">
+                <li><strong>Développement web :</strong> HTML, CSS, Sass, JavaScript, Bootstrap, PHP, Node.js, MySQL</li>
+                <li><strong>Outils & versioning :</strong> Git, GitHub</li>
+                <li><strong>Bureautique :</strong> Bonne maîtrise de Word, PowerPoint, Excel</li>
               </ul>
             </div>
           </div>

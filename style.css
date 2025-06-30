@@ -1235,7 +1235,7 @@ body.dark .icon-sun {
 }
 .cv2-cols {
   display: flex;
-  max-width: 800px;
+  max-width: 900px;
   margin: 2.5rem auto;
   background: #fff;
   border-radius: 18px;
@@ -1329,6 +1329,7 @@ body.dark .icon-sun {
   font-size: 0.99em;
   color: #222;
   margin: 0;
+  text-align: justify;
 }
 .cv2-right .cv2-section h4 {
   color: #6C63FF;
@@ -1340,19 +1341,112 @@ body.dark .icon-sun {
 }
 @media (max-width: 700px) {
   .cv2-cols {
-    flex-direction: column;
+    flex-direction: row !important;
+    max-width: 100vw;
     min-width: 0;
-    max-width: 98vw;
-    border-radius: 18px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px #6c63ff22;
+    overflow: hidden;
+    background: #fff;
   }
   .cv2-left {
-    width: 100%;
-    min-width: 0;
-    border-radius: 18px 18px 0 0;
-    padding: 1.5rem 0.7rem 1.2rem 0.7rem;
+    width: 120px !important;
+    min-width: 90px !important;
+    padding: 0.7rem 0.3rem 0.7rem 0.3rem !important;
+    border-radius: 12px 0 0 12px;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(160deg, #6C63FF 80%, #4e4e8e 100%);
+  }
+  .cv2-photo img {
+    width: 40px !important;
+    height: 40px !important;
+    margin-bottom: 0.2em;
+    border: 2px solid #fff;
+  }
+  .cv2-nom {
+    font-size: 0.7em !important;
+    margin-bottom: 0.1em;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+  .cv2-titre {
+    font-size: 0.6em !important;
+    margin-bottom: 0.3em;
+    color: #e0e0ff;
+    font-style: italic;
+  }
+  .cv2-section-infos ul li {
+    font-size: 0.6em !important;
+    margin-bottom: 0.1em;
+    gap: 0.2em;
+  }
+  .cv2-section {
+    margin-bottom: 0.3em;
+    padding: 0.1em 0.1em 0.1em 0.1em;
+    background: none;
+    border-radius: 0;
+    text-align: left;
+  }
+  .cv2-section h4 {
+    font-size: 0.7em !important;
+    margin-bottom: 0.1em;
+    color: #6C63FF;
+    letter-spacing: 0.01em;
+    text-align: left;
+    font-weight: 700;
   }
   .cv2-right {
-    padding: 1.2rem 0.7rem 1.2rem 0.7rem;
+    padding: 0.5rem 0.3rem 0.5rem 0.3rem !important;
+    background: #fff;
+    border-radius: 0 12px 12px 0;
+    box-shadow: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+  }
+  .cv2-profil h4 {
+    font-size: 0.7em !important;
+    margin-bottom: 0.1em;
+    text-align: left;
+  }
+  .cv2-profil p {
+    font-size: 0.65em !important;
+    color: #222;
+    margin: 0;
+    text-align: left;
+  }
+  .cv2-section-langues ul, .cv2-section-interets ul {
+    gap: 0.5em;
+    font-size: 0.6em !important;
+  }
+  .cv2-section-langues ul li, .cv2-section-interets ul li {
+    font-size: 0.6em !important;
+    margin-bottom: 0.1em;
+    color: #222;
+  }
+  .cv2-list-points li {
+    font-size: 0.6em !important;
+    margin-bottom: 0.2em;
+    text-align: left;
+  }
+  .cv2-list-competences-flex li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.05em;
+    font-size: 0.6em !important;
+    margin-bottom: 0.1em;
+  }
+  .cv2-competence-label, .cv2-competence-tech {
+    min-width: unset;
+    flex: unset;
+    text-align: left;
+    font-size: 0.6em !important;
+  }
+  .cv2-date {
+    color: #888;
+    font-size: 0.6em !important;
+    margin-left: 0.2em;
   }
 }
 .cv2-section-langues .cv2-points {
@@ -1368,7 +1462,19 @@ body.dark .icon-sun {
   background: #4FC3F7;
   border-radius: 50%;
   margin-right: 0.5em;
-  vertical-align: middle;
+  vertical-align: baseline;
+}
+.cv2-section-interets ul li {
+  display: flex;
+  align-items: baseline;
+  font-size: 1em;
+  margin-bottom: 0.2em;
+  line-height: 1.3;
+}
+.cv2-section-interets ul {
+  padding-left: 0;
+  margin: 0;
+  list-style: none;
 }
 .cv2-section-infos i {
   color: #4FC3F7;
@@ -1380,20 +1486,22 @@ body.dark .icon-sun {
   margin: 0;
 }
 .cv2-list-points li {
-  position: relative;
-  padding-left: 1.3em;
-  margin-bottom: 0.4em;
+  display: block;
+  margin-bottom: 1.2em;
+  padding-left: 0;
+  text-align: left;
 }
-.cv2-list-points li::before {
-  content: '';
-  display: inline-block;
-  width: 9px;
-  height: 9px;
-  background: #4FC3F7;
-  border-radius: 50%;
-  position: absolute;
-  left: 0;
-  top: 0.45em;
+.cv2-list-points li > div {
+  display: block;
+  margin-bottom: 0.2em;
+}
+.cv2-list-points li > div.cv2-groupe {
+  color: #888;
+  font-style: italic;
+  font-size: 0.98em;
+  margin-top: 0.1em;
+  margin-bottom: 0.1em;
+  letter-spacing: 0.01em;
 }
 .cv2-list-competences {
   list-style: none;
@@ -1408,79 +1516,35 @@ body.dark .icon-sun {
   margin-bottom: 0.4em;
   flex-wrap: wrap;
 }
-.cv2-competence-label {
-  font-weight: 700;
-  min-width: 180px;
-  flex: 1 1 180px;
-}
-.cv2-competence-tech {
-  text-align: right;
-  flex: 2 1 200px;
-  color: #222;
-}
-.cv2-section-infos ul li {
-  font-size: 0.97em;
-  margin-bottom: 0.3em;
-  word-break: break-word;
-  display: flex;
-  align-items: flex-start;
-  gap: 0.5em;
-}
-.cv2-section-infos ul li .fa-map-marker {
-  margin-top: 3px;
-}
-.cv2-section-infos ul li span.adresse-ligne2 {
-  display: block;
-  margin-left: 1.5em;
-}
-.cv2-section-infos ul {
-  margin-bottom: 0.7em;
-}
-.cv2-list-competences-simple {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.cv2-list-competences-simple li {
-  margin-bottom: 0.7em;
-  font-size: 1em;
-}
-.cv2-list-competences-simple .cv2-competence-tech {
-  display: block;
-  margin-left: 0.2em;
-  color: #222;
-  font-weight: 400;
-  font-size: 0.98em;
-}
-.cv2-list-competences-flex {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
 .cv2-list-competences-flex li {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: flex-start;
   margin-bottom: 0.5em;
   font-size: 1em;
+  text-align: justify;
+  line-height: 1.4;
 }
 .cv2-competence-label {
   font-weight: 700;
-  min-width: 170px;
-  flex: 0 0 auto;
+  min-width: 220px;
+  max-width: 220px;
+  flex: 0 0 220px;
+  text-align: right;
+  padding-right: 0.5em;
 }
 .cv2-competence-sep {
   margin: 0 0.2em 0 0.2em;
-  flex: 0 0 auto;
+  flex: 0 0 10px;
+  text-align: center;
 }
 .cv2-competence-tech {
-  flex: 1 1 200px;
+  flex: 1 1 0;
   min-width: 120px;
   color: #222;
   word-break: break-word;
-}
-.cv2-list-competences-flex li {
-  line-height: 1.4;
+  text-align: left;
+  padding-left: 0.5em;
 }
 .cv2-list-competences-dictee {
   list-style: none;
@@ -1491,4 +1555,116 @@ body.dark .icon-sun {
   margin-bottom: 0.5em;
   font-size: 1em;
   font-weight: 400;
+}
+.cv2-mini-section {
+  margin-bottom: 1.1em;
+  padding-bottom: 0.5em;
+  padding-left: 0;
+  border-left: none !important;
+}
+.cv2-mini-section strong {
+  display: block;
+  color: #6C63FF;
+  font-size: 1.08em;
+  margin-bottom: 0.3em;
+  letter-spacing: 0.01em;
+}
+.cv2-mini-section ul {
+  margin-top: 0.2em;
+}
+.cv2-mini-section em {
+  color: #4FC3F7;
+  font-style: normal;
+  font-weight: 500;
+}
+.cv2-titre-realisations {
+  font-size: 1.35em;
+  color: #6C63FF;
+  font-weight: 800;
+  margin-bottom: 0.5em;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+.cv2-soustitre {
+  display: block;
+  font-size: 1.05em;
+  color: #4FC3F7;
+  font-weight: 700;
+  margin-bottom: 0.3em;
+  margin-top: 0.7em;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-align: left;
+  margin-left: 0;
+}
+.cv2-objectif {
+  font-weight: 700;
+  color: #6C63FF;
+  margin-right: 0.3em;
+}
+.cv2-titre-formation {
+  font-size: 1.35em;
+  color: #6C63FF;
+  font-weight: 800;
+  margin-bottom: 0.5em;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-align: center;
+}
+.cv2-diplome {
+  margin-bottom: 1.1em;
+  padding-bottom: 0.3em;
+}
+.cv2-diplome-titre {
+  font-weight: 700;
+  color: #23234a;
+  font-size: 1.08em;
+  margin-bottom: 0.1em;
+}
+.cv2-diplome-desc {
+  color: #666;
+  font-size: 0.98em;
+  margin-left: 0.2em;
+}
+.cv2-section-langues .cv2-lang-desc {
+  display: block;
+  text-align: left;
+  font-size: 0.97em;
+  color: #e0e0ff;
+  margin-left: 0.5em;
+  margin-top: 0.1em;
+  font-style: italic;
+  line-height: 1.2;
+}
+.cv2-lang-block {
+  margin-bottom: 0.7em;
+  text-align: left;
+}
+.cv2-lang-label {
+  font-weight: 600;
+  margin-right: 0.5em;
+}
+.cv2-lang-desc {
+  display: block;
+  margin-top: 0.1em;
+  margin-left: 0;
+  font-size: 0.97em;
+  color: #e0e0ff;
+  font-style: italic;
+  line-height: 1.2;
+}
+.cv2-projet-lien {
+  display: inline-block;
+  margin-top: 0.3em;
+  color: #6C63FF;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s;
+  padding: 0.1em 0.3em;
+  border-radius: 6px;
+}
+.cv2-projet-lien:hover {
+  color: #fff;
+  background: #6C63FF;
+  text-decoration: underline;
 } 
