@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mon Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <header>
+      <nav>
+        <div class="nav-desktop">
+          <ul>
+            <li><a href="#accueil">Accueil</a></li>
+            <li><a href="#projets">Projets</a></li>
+            <li><a href="#cv">CV</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+          
+          <label class="theme-switch">
+            <input type="checkbox" id="theme-toggle" aria-label="Changer le mode sombre/clair">
+            <span class="slider">
+              <span class="icon-moon">&#9789;</span>
+              <span class="icon-sun">&#9728;</span>
+            </span>
+          </label>
+        </div>
+        <div class="nav-mobile">
+          <button id="burger" aria-label="Ouvrir le menu"><span></span><span></span><span></span></button>
+          <div id="mobile-menu" class="mobile-menu">
+            <div class="mobile-menu-header">
+              <button class="close-menu" onclick="closeMenu()">&times;</button>
+            </div>
+            <a href="#accueil" onclick="closeMenu()">Accueil</a>
+            <a href="#projets" onclick="closeMenu()">Projets</a>
+            <a href="#cv" onclick="closeMenu()">CV</a>
+            <a href="#contact" onclick="closeMenu()">Contact</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section id="accueil">
+        <div class="presentation">
+          <img src="https://ui-avatars.com/api/?name=Déborah+Anjavidy&background=6C63FF&color=fff&size=256" alt="Déborah Kristen Anjavidy" class="photo-profil">
+          <div>
+            <h1>Bonjour, je suis <span class="nom">Déborah</span></h1>
+            <p class="desc">Développeur web passionné, créatif et motivé à créer des expériences uniques.</p>
+            <p class="desc dynamique" v-text="presentation"></p>
+          </div>
+        </div>
+      </section>
+      <section id="projets">
+        <h2>Mes Projets</h2>
+        <div class="filter-container">
+          <div class="filter-buttons">
+            <button class="filter-button active" @click="filtrerProjets('Tout')">Tout</button>
+            <button class="filter-button" @click="filtrerProjets('L1')">L1</button>
+            <button class="filter-button" @click="filtrerProjets('L2')">L2</button>
+            <button class="filter-button" @click="filtrerProjets('L3')">L3</button>
+            <button class="filter-button" @click="filtrerProjets('M1')">M1</button>
+            <button class="filter-button" @click="filtrerProjets('M2')">M2</button>
+            <button class="filter-button" @click="filtrerProjets('Autre')">Autre</button>
+          </div>
+        </div>
+        <div class="portfolio-grid">
+          <div class="project-card" v-for="projet in projetsFiltres" :key="projet.titre">
+            <div class="project-images">
+              <img v-for="(img, idx) in projet.images" :src="img" :alt="projet.titre + ' - Image ' + (idx+1)">
+            </div>
+            <div class="project-text">
+              <h4>{{ projet.titre }}</h4>
+              <p>{{ projet.resume }}</p>
+              <span class="voir-plus" @click.stop="voirDetails(projet)">Voir plus</span>
+            </div>
+            <a v-if="projet.lien" :href="projet.lien" class="visit-site" target="_blank" @click.stop>
+              <i class="fa fa-external-link"></i> Visiter le site
+            </a>
+          </div>
+        </div>
+        <div v-if="projetSelectionne" class="modal-projet">
+          <div class="modal-content-projet">
+            <span class="close" @click="fermerModal">&times;</span>
+            <div class="modal-images-scroll">
+              <img v-for="(img, idx) in projetSelectionne.images" :src="img" :alt="projetSelectionne.titre + ' - Image ' + (idx+1)">
+            </div>
+            <div class="modal-desc">
+              <h3>{{ projetSelectionne.titre }}</h3>
+              <p>{{ projetSelectionne.description }}</p>
+              <a v-if="projetSelectionne.lien" :href="projetSelectionne.lien" class="visit-site" target="_blank">
+                <i class="fa fa-external-link"></i> Voir le projet en ligne
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="cv">
+        <h2>Mon CV</h2>
+        <div class="cv2-cols">
+          <div class="cv2-left">
+            <div class="cv2-bandeau"></div>
+            <div class="cv2-photo">
+              <div class="cv2-photo-circle">
+                <img src="https://ui-avatars.com/api/?name=Déborah+Anjavidy&background=fff&color=6C63FF&size=256" alt="Déborah Kristen Anjavidy">
+              </div>
+            </div>
+            <div class="cv2-nom">Déborah Kristen<br><span>ANJAVIDY</span></div>
+            <div class="cv2-titre">Stage en informatique</div>
+            <div class="cv2-section cv2-section-infos">
+              <h4>Contact</h4>
+              <ul>
+                <li><i class="fa fa-envelope"></i> deborahanjavidy@gmail.com</li>
+                <li><i class="fa fa-phone"></i> +261 32 241 5885</li>
+                <li><i class="fa fa-map-marker"></i> LOT VK 63 AB<span class="adresse-ligne2">Ambohitsoa, 101 Antananarivo</span></li>
+              </ul>
+            </div>
+            <div class="cv2-section cv2-section-langues">
+              <h4>Langues</h4>
+              <ul>
+                <li>Français <span class="cv2-points">●●●●●</span></li>
+                <li>Anglais <span class="cv2-points">●●●○○</span></li>
+              </ul>
+            </div>
+            <div class="cv2-section cv2-section-interets">
+              <h4>Centres d'intérêt</h4>
+              <ul>
+                <li><span class="cv2-dot"></span> Lecture</li>
+                <li><span class="cv2-dot"></span> Programmation</li>
+              </ul>
+            </div>
+          </div>
+          <div class="cv2-right">
+            <div class="cv2-identite cv2-section">
+              <h4>Informations personnelles</h4>
+              <ul>
+                <li><b>Prénom :</b> Déborah Kristen</li>
+                <li><b>Nom :</b> ANJAVIDY</li>
+                <li><b>Âge :</b> 20 ans</li>
+                <li><b>Nationalité :</b> Malgache</li>
+                <li><b>Statut :</b> Célibataire</li>
+              </ul>
+            </div>
+            <div class="cv2-profil">
+              <h4>Profil</h4>
+              <p>Étudiante motivée en informatique, je cherche à développer mes compétences techniques et professionnelles à travers un stage pratique. Sérieuse, rigoureuse et curieuse, je souhaite appliquer concrètement mes connaissances académiques dans un environnement stimulant.</p>
+            </div>
+            <div class="cv2-section">
+              <h4>Formation</h4>
+              <ul>
+                <li><b>Licence 2</b>, INSI, Antananarivo <span class="cv2-date">de 2025 à ce jour</span></li>
+                <li><b>Licence 1</b>, INSI, Antananarivo <span class="cv2-date">de oct. 2024 à juil. 2025</span></li>
+                <li><b>Bac Série D</b>, Educ Plus, Antananarivo <span class="cv2-date">de sept. 2023 à juin 2024</span></li>
+              </ul>
+            </div>
+            <div class="cv2-section">
+              <h4>Réalisations</h4>
+              <ul class="cv2-list-points">
+                <li>Participation à deux hackathons interclasses axés sur le DevOps, m'ayant permis de développer mes compétences en travail d'équipe et en collaboration sur des projets techniques.</li>
+                <li>Participation à un hackathon interclasse sur le CTF, m'ayant appris à résoudre des défis de cybersécurité et à renforcer mes capacités d'analyse et de logique.</li>
+              </ul>
+            </div>
+            <div class="cv2-section">
+              <h4>Compétences</h4>
+              <ul class="cv2-list-competences-flex">
+                <li><span class="cv2-competence-label"><b>Développement web (niveau intermédiaire)</b></span><span class="cv2-competence-sep"> : </span><span class="cv2-competence-tech">HTML, CSS, Sass, JavaScript</span></li>
+                <li><span class="cv2-competence-label"><b>Bureautique</b></span><span class="cv2-competence-sep"> : </span><span class="cv2-competence-tech">Bonne maîtrise de Word, PowerPoint et Excel</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="contact">
+        <h2>Contact</h2>
+        <form @submit.prevent="envoyerEmail">
+          <input type="text" v-model="form.nom" placeholder="Votre nom" required>
+          <input type="email" v-model="form.email" placeholder="Votre email" required>
+          <textarea v-model="form.message" placeholder="Votre message" required></textarea>
+          <button type="submit">Envoyer</button>
+        </form>
+        <p v-if="messageEnvoye" class="success">Message envoyé !</p>
+      </section>
+    </main>
+    <footer>
+      <div class="footer-content">
+        <div class="footer-infos">
+          <span><i class="fa fa-map-marker"></i> Antananarivo, Madagascar</span>
+          <span><i class="fa fa-phone"></i> 0322415885</span>
+          <span><i class="fa fa-envelope"></i> deborahanjavidy@gmail.com</span>
+        </div>
+        <div class="footer-links">
+          <a href="https://github.com/deborahanjavidy" target="_blank" title="GitHub"><i class="fa fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/tonprofil" target="_blank" title="LinkedIn"><i class="fa fa-linkedin"></i></a>
+          <a href="https://facebook.com/deborahanjavidy" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a>
+        </div>
+        <div class="footer-main">
+          <span>&copy; 2025 Anjavidy Déborah Kristen.</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script src="app.js"></script>
+  <script>
+  function closeMenu() {
+    document.getElementById('mobile-menu').classList.remove('open');
+    document.getElementById('burger').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('DOMContentLoaded', function() {
+    // Hamburger
+    var burger = document.getElementById('burger');
+    var menu = document.getElementById('mobile-menu');
+    if (burger && menu) {
+      burger.addEventListener('click', function() {
+        burger.classList.toggle('open');
+        menu.classList.toggle('open');
+        if (menu.classList.contains('open')) {
+          document.body.style.overflow = 'hidden';
+        } else {
+          document.body.style.overflow = '';
+        }
+      });
+    }
+    // Switch theme unique
+    var themeToggle = document.getElementById('theme-toggle');
+    function setTheme(dark) {
+      if (dark) {
+        document.body.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+        if (themeToggle) themeToggle.checked = true;
+      } else {
+        document.body.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+        if (themeToggle) themeToggle.checked = false;
+      }
+    }
+    if (localStorage.getItem('theme') === 'dark') {
+      setTheme(true);
+    }
+    if (themeToggle) {
+      themeToggle.addEventListener('change', function() {
+        setTheme(themeToggle.checked);
+      });
+    }
+  });
+  </script>
+</body>
+</html>
