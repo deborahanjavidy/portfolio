@@ -1246,6 +1246,7 @@ body.dark .icon-sun {
   align-items: stretch;
   position: relative;
   padding-top: 0;
+  padding-bottom: 2.5rem;
 }
 .cv2-left {
   width: 320px;
@@ -1254,7 +1255,7 @@ body.dark .icon-sun {
   margin-top: 30px;
   background: #bfbfbf;
   min-height: 100%;
-  height: auto;
+  height: 100%;
   padding-left: 24px;
   padding-right: 16px;
   padding-top: 40px;
