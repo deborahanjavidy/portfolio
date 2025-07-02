@@ -168,6 +168,7 @@ main {
 #cv {
   margin: 3rem 0;
   text-align: center;
+  position: relative;
 }
 .btn-cv {
   display: inline-block;
@@ -1243,9 +1244,11 @@ body.dark .icon-sun {
   overflow: hidden;
   min-height: 420px;
   align-items: stretch;
+  position: relative;
+  margin-top: 32px;
 }
 .cv2-left {
-  background: #444;
+  background: #bfbfbf;
   color: #fff;
   width: 300px;
   min-width: 180px;
@@ -1262,7 +1265,7 @@ body.dark .icon-sun {
 .cv2-left-top {
   position: relative;
   height: 130px;
-  background: #444;
+  background: #bfbfbf;
   border-radius: 0 0 150px 150px / 0 0 100px 100px;
   margin-bottom: 0.5rem;
 }
@@ -1271,7 +1274,7 @@ body.dark .icon-sun {
   transform: translateX(-50%) translateY(0%) !important;
 }
 .cv2-left {
-  padding-top: 44px !important;
+  padding-top: 40px !important;
 }
 .cv2-photo-circle-large {
   width: 220px !important;
@@ -1282,7 +1285,7 @@ body.dark .icon-sun {
   align-items: center;
   justify-content: center;
   box-shadow: 0 4px 24px #23232333;
-  border: 8px solid #444;
+  border: 8px solid #bfbfbf;
   position: absolute;
   left: 50%;
   transform: translateX(-50%) translateY(-60%);
@@ -1704,4 +1707,24 @@ body.dark .icon-sun {
   background: #6C63FF;
   text-decoration: underline;
 }
-.cv2-bandeau { display: none; } 
+.cv2-bandeau { display: none; }
+.cv2-horizontal-bar {
+  width: 360px;
+  height: 32px;
+  background: #716f6c;
+  border-radius: 18px;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+.cv2-cols > h2 {
+  text-align: center;
+  padding-top: 16px;
+  margin-bottom: 8px;
+  font-size: 1.7em;
+  font-weight: 700;
+  color: #232323;
+  background: none;
+} 
