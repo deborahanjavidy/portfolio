@@ -1251,12 +1251,32 @@ body.dark .icon-sun {
   width: 320px;
   min-width: 320px;
   margin-left: 40px;
+  margin-top: 30px;
   background: #bfbfbf;
   min-height: 100%;
   height: auto;
   padding-left: 24px;
   padding-right: 16px;
-  padding-top: 0;
+  padding-top: 40px;
+  z-index: 2;
+  position: relative;
+  border-top-left-radius: 80px;
+  border-top-right-radius: 80px;
+}
+.cv2-left::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #bfbfbf;
+  border-top-left-radius: 110px;
+  z-index: 1;
+  border-top-right-radius: 110px;
+}
+.cv2-left > * {
+  position: relative;
   z-index: 2;
 }
 .cv2-horizontal-bar-bg {
@@ -1281,7 +1301,7 @@ body.dark .icon-sun {
   transform: translateX(-50%) translateY(0%) !important;
 }
 .cv2-left {
-  padding-top: 40px !important;
+  position: relative;
 }
 .cv2-photo-circle-large {
   width: 220px !important;
@@ -1310,7 +1330,7 @@ body.dark .icon-sun {
 .cv2-right {
   width: 700px;
   min-width: 700px;
-  padding-top: 270px;
+  padding-top: 300px;
   padding-left: 40px;
   padding-right: 40px;
   background: #fff;
@@ -1737,4 +1757,18 @@ body.dark .icon-sun {
   font-weight: 700;
   color: #232323;
   background: none;
+}
+.cv2-cercle-haut {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 220px;
+  height: 220px;
+  background: #bfbfbf;
+  border-radius: 0 0 0 100%;
+  z-index: 3;
+}
+.cv2-left {
+  position: relative;
+  padding-top: 110px;
 } 
