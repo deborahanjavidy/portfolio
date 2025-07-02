@@ -1242,27 +1242,68 @@ body.dark .icon-sun {
   box-shadow: 0 4px 24px #6c63ff22;
   overflow: hidden;
   min-height: 420px;
+  align-items: stretch;
 }
 .cv2-left {
-  background: linear-gradient(160deg, #6C63FF 80%, #4e4e8e 100%);
+  background: #444;
   color: #fff;
   width: 300px;
   min-width: 180px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2.2rem 1.2rem 1.5rem 1.2rem;
-  border-radius: 18px 0 0 18px;
+  padding: 0 1.2rem 1.5rem 1.2rem;
+  border-radius: 0 0 0 18px;
   position: relative;
+  margin-top: 0;
+  justify-content: flex-start;
+  padding-top: 64px !important;
 }
-.cv2-photo img {
-  width: 80px;
-  height: 80px;
+.cv2-left-top {
+  position: relative;
+  height: 130px;
+  background: #444;
+  border-radius: 0 0 150px 150px / 0 0 100px 100px;
+  margin-bottom: 0.5rem;
+}
+.cv2-left-top .cv2-photo-circle-large {
+  top: 11px !important;
+  transform: translateX(-50%) translateY(0%) !important;
+}
+.cv2-left {
+  padding-top: 44px !important;
+}
+.cv2-photo-circle-large {
+  width: 220px !important;
+  height: 220px !important;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 24px #23232333;
+  border: 8px solid #444;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) translateY(-60%);
+  top: 0;
+  z-index: 2;
+}
+.cv2-photo-circle-large img {
+  width: 200px !important;
+  height: 200px !important;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid #fff;
+  border: 4px solid #fff;
   background: #fff;
-  margin-bottom: 0.7em;
+}
+.cv2-right {
+  flex: 1 1 0%;
+  background: #fff;
+  padding: 2.2rem 2rem 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 .cv2-nom {
   font-weight: 700;
@@ -1270,6 +1311,7 @@ body.dark .icon-sun {
   text-align: center;
   margin-bottom: 0.2em;
   line-height: 1.2;
+  margin-top: 132px !important;
 }
 .cv2-nom span {
   font-size: 1.2em;
@@ -1310,14 +1352,6 @@ body.dark .icon-sun {
 .cv2-section i {
   color: #FFD700;
   font-size: 1em;
-}
-.cv2-right {
-  flex: 1 1 0%;
-  background: #fff;
-  padding: 2.2rem 2rem 1.5rem 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
 }
 .cv2-profil {
   margin-bottom: 1.2em;
@@ -1360,7 +1394,7 @@ body.dark .icon-sun {
     text-align: center;
     background: linear-gradient(160deg, #6C63FF 80%, #4e4e8e 100%);
   }
-  .cv2-photo img {
+  .cv2-photo-circle-large img {
     width: 40px !important;
     height: 40px !important;
     margin-bottom: 0.2em;
@@ -1669,4 +1703,5 @@ body.dark .icon-sun {
   color: #fff;
   background: #6C63FF;
   text-decoration: underline;
-} 
+}
+.cv2-bandeau { display: none; } 
