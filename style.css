@@ -1260,8 +1260,8 @@ body.dark .icon-sun {
   padding-top: 40px;
   z-index: 2;
   position: relative;
-  border-top-left-radius: 80px;
-  border-top-right-radius: 80px;
+  border-top-left-radius: 160px;
+  border-top-right-radius: 160px;
 }
 .cv2-left::before {
   content: '';
@@ -1271,9 +1271,9 @@ body.dark .icon-sun {
   width: 100%;
   height: 100%;
   background: #bfbfbf;
-  border-top-left-radius: 110px;
+  border-top-left-radius: 160px;
   z-index: 1;
-  border-top-right-radius: 110px;
+  border-top-right-radius: 160px;
 }
 .cv2-left > * {
   position: relative;
@@ -1311,6 +1311,9 @@ body.dark .icon-sun {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -60px;
   box-shadow: 0 4px 24px #23232333;
   border: 8px solid #bfbfbf;
   position: absolute;
@@ -1320,8 +1323,8 @@ body.dark .icon-sun {
   z-index: 2;
 }
 .cv2-photo-circle-large img {
-  width: 200px !important;
-  height: 200px !important;
+  width: 260px !important;
+  height: 260px !important;
   border-radius: 50%;
   object-fit: cover;
   border: 4px solid #fff;
