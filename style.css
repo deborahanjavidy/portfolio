@@ -1245,8 +1245,7 @@ body.dark .icon-sun {
   min-height: 420px;
   align-items: stretch;
   position: relative;
-  padding-top: 270px;
-  padding-left: 0;
+  padding-top: 0;
 }
 .cv2-left {
   width: 320px;
@@ -1257,6 +1256,8 @@ body.dark .icon-sun {
   height: auto;
   padding-left: 24px;
   padding-right: 16px;
+  padding-top: 0;
+  z-index: 2;
 }
 .cv2-horizontal-bar-bg {
   position: absolute;
@@ -1309,8 +1310,10 @@ body.dark .icon-sun {
 .cv2-right {
   width: 700px;
   min-width: 700px;
+  padding-top: 270px;
+  padding-left: 40px;
+  padding-right: 40px;
   background: #fff;
-  padding: 2.2rem 2rem 1.5rem 2rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
