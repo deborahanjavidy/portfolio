@@ -1236,7 +1236,7 @@ body.dark .icon-sun {
 }
 .cv2-cols {
   display: flex;
-  max-width: 900px;
+  max-width: 1080px;
   margin: 2.5rem auto;
   background: #fff;
   border-radius: 18px;
@@ -1245,22 +1245,28 @@ body.dark .icon-sun {
   min-height: 420px;
   align-items: stretch;
   position: relative;
-  margin-top: 32px;
+  padding-top: 270px;
+  padding-left: 0;
 }
 .cv2-left {
+  width: 320px;
+  min-width: 320px;
+  margin-left: 40px;
   background: #bfbfbf;
-  color: #fff;
-  width: 300px;
-  min-width: 180px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0 1.2rem 1.5rem 1.2rem;
-  border-radius: 0 0 0 18px;
-  position: relative;
-  margin-top: 0;
-  justify-content: flex-start;
-  padding-top: 64px !important;
+  min-height: 100%;
+  height: auto;
+  padding-left: 24px;
+  padding-right: 16px;
+}
+.cv2-horizontal-bar-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 270px;
+  background: #716f6c;
+  border-radius: 24px 24px 0 0;
+  z-index: 1;
 }
 .cv2-left-top {
   position: relative;
@@ -1301,7 +1307,8 @@ body.dark .icon-sun {
   background: #fff;
 }
 .cv2-right {
-  flex: 1 1 0%;
+  width: 700px;
+  min-width: 700px;
   background: #fff;
   padding: 2.2rem 2rem 1.5rem 2rem;
   display: flex;
