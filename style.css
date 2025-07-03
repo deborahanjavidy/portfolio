@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 :root {
-  --main-color: #181824;
+  --main-color: #fff;
   --accent: #FFD700;
-  --bg: #232323;
-  --text: #f5f6fa;
+  --bg: #f5f6fa;
+  --text: #232323;
   --radius: 18px;
 }
 * {
@@ -20,7 +20,7 @@ body {
 header, footer {
   background: var(--bg);
   color: var(--accent);
-  box-shadow: 0 2px 12px #0008;
+  box-shadow: 0 2px 12px #FFD70022;
 }
 nav ul {
   display: flex;
@@ -170,7 +170,7 @@ main {
 }
 .btn-cv, .btn-theme, #contact button {
   background: var(--accent);
-  color: #181824;
+  color: #232323;
   border: none;
   border-radius: var(--radius);
   padding: 0.7rem 2rem;
@@ -181,7 +181,7 @@ main {
   box-shadow: 0 2px 8px #FFD70044;
 }
 .btn-cv:hover, .btn-theme:hover, #contact button:hover {
-  background: #fff;
+  background: #232323;
   color: var(--accent);
 }
 #contact {
@@ -198,9 +198,15 @@ main {
 #contact input, #contact textarea {
   padding: 0.8rem;
   border-radius: var(--radius);
-  border: 1px solid #ddd;
+  border: 1px solid #FFD70044;
   font-size: 1rem;
   resize: none;
+  background: #f5f6fa;
+  color: #232323;
+}
+#contact input:focus, #contact textarea:focus {
+  border-color: var(--accent);
+  outline: none;
 }
 #contact button {
   background: var(--main-color);
@@ -299,7 +305,7 @@ footer {
   margin: 2rem 0;
 }
 .cv-block {
-  background: #232323;
+  background: #fff;
   border-radius: var(--radius);
   box-shadow: 0 2px 16px #6c63ff11;
   padding: 1.5rem 1.2rem;
@@ -703,8 +709,8 @@ body.dark .project-images img {
 }
 /* Style glassmorphism et accents modernes */
 .cv-card, .project-card, .modal-content-projet, .filter-container {
-  background: #232323;
-  color: #FFD700;
+  background: #fff;
+  color: var(--accent);
   box-shadow: 0 8px 32px #FFD70022, 0 1.5px 8px #FFD70022;
   border: 1.5px solid #FFD70022;
 }
