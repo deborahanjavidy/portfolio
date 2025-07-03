@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 :root {
-  --main-color: #fff;
+  --main-color: #1abc9c; /* vert pro lumineux */
   --accent: #FFD700;
-  --bg: #f5f6fa;
+  --bg: #e8fff3; /* vert très clair pour les blocs */
   --text: #232323;
   --radius: 18px;
 }

@@ -152,4 +152,12 @@ new Vue({
     emailjs.init('user_xxxxxxxxxxxxxxxxx'); // Remplacez par votre userID EmailJS
   };
   document.body.appendChild(script);
-})(); 
+})();
+
+const transporter = nodemailer.createTransport({
+  service: "gmail",
+  auth: {
+    user: "anjavidy.dk@gmail.com",
+    pass: "nsgt bvgx twaj hihy", // mot de passe d'application fourni
+  },
+}); 
