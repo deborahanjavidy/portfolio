@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mon CV</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      min-height: 100vh;
+      background: linear-gradient(120deg, #0a192f 0%, #52eac4 100%);
+    }
+    .cv-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: calc(100vh - 140px);
+      width: 100%;
+      padding: 2rem 0;
+    }
+    .cv-image-glass {
+      background: rgba(17,34,64,0.7);
+      box-shadow: 0 8px 32px rgba(100,255,218,0.18), 0 0 16px #52eac455;
+      border-radius: 24px;
+      padding: 2vw;
+      max-width: 700px;
+      width: 90vw;
+      margin: 0 auto 2.5rem auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: fadeInUp 1.1s cubic-bezier(.68,-0.55,.27,1.55);
+      transition: box-shadow 0.3s, transform 0.3s;
+    }
+    .cv-image-glass:hover {
+      box-shadow: 0 16px 48px #64ffda88, 0 0 32px #52eac4aa;
+      transform: scale(1.025);
+    }
+    .cv-image-glass img {
+      width: 100%;
+      max-width: 600px;
+      border-radius: 18px;
+      box-shadow: 0 2px 12px #52eac422;
+      transition: box-shadow 0.3s, transform 0.3s;
+      background: #fff;
+    }
+    .cv-image-glass img:hover {
+      box-shadow: 0 8px 32px #64ffda88, 0 0 16px #52eac4aa;
+      transform: scale(1.03);
+    }
+    .cv-download-btn {
+      display: inline-block;
+      margin: 0 auto;
+      padding: 1rem 2.5rem;
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #0a192f;
+      background: linear-gradient(120deg, #64ffda 0%, #52eac4 100%);
+      border: none;
+      border-radius: 30px;
+      box-shadow: 0 4px 24px #52eac455;
+      cursor: pointer;
+      text-decoration: none;
+      letter-spacing: 0.5px;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.2s, color 0.2s, transform 0.2s, box-shadow 0.3s;
+      animation: zoomIn 1.2s cubic-bezier(.68,-0.55,.27,1.55);
+    }
+    .cv-download-btn:active {
+      transform: scale(0.97);
+      box-shadow: 0 0 12px #52eac455;
+    }
+    .cv-download-btn:hover, .cv-download-btn:focus {
+      background: linear-gradient(120deg, #52eac4 0%, #64ffda 100%);
+      color: #fff;
+      box-shadow: 0 8px 32px #64ffda88, 0 0 16px #52eac4aa;
+      transform: scale(1.04);
+    }
+    .cv-download-btn::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 0;
+      height: 0;
+      background: rgba(100,255,218,0.25);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: width 0.4s, height 0.4s;
+      pointer-events: none;
+    }
+    .cv-download-btn:active::after {
+      width: 200px;
+      height: 200px;
+      transition: 0s;
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(60px) scale(0.95); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    @keyframes zoomIn {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    @media (max-width: 700px) {
+      .cv-image-glass {
+        max-width: 98vw;
+        padding: 2vw 1vw;
+      }
+      .cv-image-glass img {
+        max-width: 95vw;
+      }
+    }
+    @media (max-width: 500px) {
+      .cv-image-glass {
+        padding: 1vw 0.5vw;
+      }
+      .cv-download-btn {
+        font-size: 1rem;
+        padding: 0.8rem 1.2rem;
+      }
+    }
+    .header-spacer {
+      height: 70px;
+    }
+    @media (max-width: 900px) {
+      .header-spacer {
+        height: 60px;
+      }
+    }
+    
+
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="container nav-container">
+      <div class="logo">Déborah Portfolio</div>
+      <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="projets.html">Projets</a></li>
+          <li><a href="cv.html" class="active">Mon CV</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <div class="header-spacer"></div>
+  <div class="cv-container">
+    <div class="cv-image-glass" id="cv-image-glass" style="position:relative; display: flex; flex-direction: column; align-items: center;">
+      <div id="cv-img-wrapper" style="width:100%; display:flex; justify-content:center; align-items:center;">
+        <img src="image/portfolio.jpg" alt="Mon CV en image" id="cv-img-main" data-zoom="1" style="display:block;">
+      </div>
+      <a href="https://drive.google.com/uc?export=download&id=1r-8DaXbs9PT0KOhR_5tQtv8vo62_vQcF" class="cv-download-btn" download="CV_Deborah_Anjavidy.pdf" style="margin-top: 18px; align-self: center;">Télécharger le CV (PDF)</a>
+    </div>
+  </div>
+  <div class="cv-zoom-controls-fixed">
+    <button class="cv-zoom-in" aria-label="Zoomer" type="button">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#64ffda" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+    </button>
+    <button class="cv-zoom-out" aria-label="Dézoomer" type="button">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#64ffda" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+    </button>
+  </div>
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="social-links">
+        <a href="#" aria-label="LinkedIn"><svg width="24" height="24" fill="currentColor"><use href="#icon-linkedin"/></svg></a>
+        <a href="#" aria-label="GitHub"><svg width="24" height="24" fill="currentColor"><use href="#icon-github"/></svg></a>
+        <a href="#" aria-label="Twitter"><svg width="24" height="24" fill="currentColor"><use href="#icon-twitter"/></svg></a>
+      </div>
+      <p>&copy; 2024 Déborah Kristen ANJAVIDY. Tous droits réservés.</p>
+    </div>
+    <svg style="display:none;">
+      <symbol id="icon-linkedin" viewBox="0 0 24 24"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.28c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm15.5 11.28h-3v-5.6c0-1.34-.03-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97v5.7h-3v-10h2.89v1.36h.04c.4-.75 1.38-1.54 2.84-1.54 3.04 0 3.6 2 3.6 4.59v5.59z"/></symbol>
+      <symbol id="icon-github" viewBox="0 0 24 24"><path d="M12 .5c-6.62 0-12 5.38-12 12 0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58 0-.29-.01-1.05-.02-2.05-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.74.08-.74 1.2.08 1.83 1.23 1.83 1.23 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.34-5.47-5.97 0-1.32.47-2.39 1.23-3.23-.12-.3-.53-1.52.12-3.18 0 0 1.01-.32 3.3 1.23.96-.27 1.98-.41 3-.41s2.04.14 3 .41c2.28-1.55 3.29-1.23 3.29-1.23.65 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.23 0 4.64-2.81 5.67-5.48 5.97.43.37.81 1.1.81 2.22 0 1.6-.01 2.89-.01 3.28 0 .32.21.7.82.58 4.77-1.59 8.21-6.09 8.21-11.39 0-6.62-5.38-12-12-12z"/></symbol>
+      <symbol id="icon-twitter" viewBox="0 0 24 24"><path d="M24 4.56c-.89.39-1.84.65-2.84.77 1.02-.61 1.8-1.57 2.17-2.72-.95.56-2 .97-3.13 1.19-.9-.96-2.18-1.56-3.6-1.56-2.72 0-4.93 2.21-4.93 4.93 0 .39.04.77.12 1.13-4.09-.21-7.72-2.17-10.15-5.15-.42.72-.66 1.56-.66 2.45 0 1.69.86 3.18 2.18 4.06-.8-.03-1.56-.25-2.22-.62v.06c0 2.36 1.68 4.33 3.91 4.78-.41.11-.84.17-1.28.17-.31 0-.61-.03-.9-.08.61 1.91 2.39 3.3 4.5 3.34-1.65 1.29-3.73 2.06-6 2.06-.39 0-.77-.02-1.15-.07 2.14 1.37 4.68 2.17 7.41 2.17 8.89 0 13.76-7.36 13.76-13.76 0-.21 0-.42-.02-.63.94-.68 1.76-1.53 2.41-2.5z"/></symbol>
+    </svg>
+  </footer>
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        window.scrollTo(0, 0);
+      }, 1);
+    });
+
+    // Zoom avec transform: scale() et wrapper qui grandit
+    const cvImgMain = document.getElementById('cv-img-main');
+    const cvImgWrapper = document.getElementById('cv-img-wrapper');
+    const zoomInBtn = document.querySelector('.cv-zoom-in');
+    const zoomOutBtn = document.querySelector('.cv-zoom-out');
+    let zoom = 1;
+
+    function updateZoom() {
+      cvImgMain.style.transform = `scale(${zoom})`;
+      cvImgMain.setAttribute('data-zoom', zoom);
+      // Adapter la hauteur du wrapper pour suivre l'image zoomée
+      const baseHeight = cvImgMain.naturalHeight * (cvImgMain.clientWidth / cvImgMain.naturalWidth);
+      cvImgWrapper.style.height = (baseHeight * zoom) + 'px';
+    }
+
+    if (cvImgMain && zoomInBtn && zoomOutBtn) {
+      zoomInBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (zoom < 3) { zoom += 0.25; }
+        updateZoom();
+      });
+      zoomOutBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (zoom > 1) { zoom -= 0.25; if (zoom < 1) zoom = 1; }
+        updateZoom();
+      });
+      updateZoom();
+    }
+    window.addEventListener('resize', updateZoom);
+  </script>
+</body>
+</html> 
