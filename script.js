@@ -8,13 +8,44 @@
 //   });
 // });
 
-// Feedback lors de l'envoi du formulaire de contact
+// Feedback lors de l'envoi du formulaire de contact avec EmailJS
 const form = document.querySelector('.contact-form');
 if(form) {
+  // Créer l'élément de message de confirmation
+  let confirmationMsg = document.createElement('div');
+  confirmationMsg.className = 'form-confirmation-msg';
+  confirmationMsg.style.display = 'none';
+  confirmationMsg.style.marginTop = '1.2rem';
+  confirmationMsg.style.background = 'rgba(100,255,218,0.12)';
+  confirmationMsg.style.color = '#64ffda';
+  confirmationMsg.style.fontWeight = '700';
+  confirmationMsg.style.fontSize = '1.08rem';
+  confirmationMsg.style.textAlign = 'center';
+  confirmationMsg.style.borderRadius = '12px';
+  confirmationMsg.style.padding = '1rem 0.5rem';
+  form.parentNode.appendChild(confirmationMsg);
+
   form.addEventListener('submit', function(e) {
     e.preventDefault();
-    form.reset();
-    alert('Merci pour votre message ! (Simulation, aucun mail envoyé)');
+    // Identifiants EmailJS réels
+    const serviceID = 'service_1zzplg4';
+    const templateID = 'template_w8ydna5';
+    const userID = 'oaYLFKLk4tHMlStT0';
+    // Récupérer les données du formulaire (adapter les noms pour EmailJS)
+    const formData = {
+      name: form.prenom.value,
+      email: form.email.value,
+      message: form.message.value
+    };
+    emailjs.send(serviceID, templateID, formData, userID)
+      .then(function(response) {
+        form.reset();
+        confirmationMsg.textContent = '✅ Votre message a bien été envoyé !';
+        confirmationMsg.style.display = 'block';
+      }, function(error) {
+        confirmationMsg.textContent = '❌ Une erreur est survenue, veuillez réessayer.';
+        confirmationMsg.style.display = 'block';
+      });
   });
 }
 

@@ -631,7 +631,7 @@ body > main {
 }
 .typing-accroche {
   font-size: 1.25rem;
-  color: #ccd6f6;
+  color: #fff;
   min-height: 2.2em;
   margin-bottom: 2rem;
   font-family: 'Montserrat', monospace, Arial, sans-serif;
@@ -643,7 +643,7 @@ body > main {
 .typing-cursor {
   display: inline-block;
   width: 1ch;
-  color: #64ffda;
+  color: #fff;
   animation: blink 1s steps(1) infinite;
   font-weight: bold;
 }

@@ -173,6 +173,12 @@
     }
   </style>
 </head>
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  (function(){
+    emailjs.init('oaYLFKLk4tHMlStT0');
+  })();
+</script>
 <body class="contact-page">
   <header class="navbar">
     <div class="container nav-container">
@@ -204,8 +210,7 @@
             <a href="tel:+261322415885">+261 32 24 158 85</a>
           </div>
         </div>
-        <form class="contact-form" action="https://formsubmit.co/anjavidy.dk@gmail.com" method="POST" autocomplete="off">
-          <input type="hidden" name="_captcha" value="false">
+        <form class="contact-form" autocomplete="off">
           <div class="form-group">
             <input type="text" id="prenom" name="prenom" required placeholder=" ">
             <label for="prenom">Prénom</label>
