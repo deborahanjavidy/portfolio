@@ -469,6 +469,12 @@ body {
   .nav-container {
     position: relative;
   }
+  .nav-links a:active {
+    background: #64ffda;
+    color: #0a192f !important;
+    border-radius: 8px;
+    transition: background 0.15s, color 0.15s;
+  }
 }
 @media (max-width: 500px) {
   .logo {
@@ -543,6 +549,12 @@ body {
   }
   .nav-container {
     position: relative;
+  }
+  .nav-links a:active {
+    background: #64ffda;
+    color: #0a192f !important;
+    border-radius: 8px;
+    transition: background 0.15s, color 0.15s;
   }
 }
 
