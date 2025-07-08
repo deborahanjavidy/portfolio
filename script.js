@@ -43,6 +43,7 @@ if(form) {
         confirmationMsg.textContent = '✅ Votre message a bien été envoyé !';
         confirmationMsg.style.display = 'block';
       }, function(error) {
+        console.log('Erreur EmailJS :', error);
         confirmationMsg.textContent = '❌ Une erreur est survenue, veuillez réessayer.';
         confirmationMsg.style.display = 'block';
       });

@@ -173,12 +173,6 @@
     }
   </style>
 </head>
-<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script>
-  (function(){
-    emailjs.init('oaYLFKLk4tHMlStT0');
-  })();
-</script>
 <body class="contact-page">
   <header class="navbar">
     <div class="container nav-container">
@@ -244,5 +238,46 @@
     </svg>
   </footer>
   <script src="script.js"></script>
+  <script type="module">
+    import emailjs from 'https://cdn.emailjs.com/dist/email.min.mjs';
+    emailjs.init('oaYLFKLk4tHMlStT0');
+    const form = document.querySelector('.contact-form');
+    if (form) {
+      let confirmationMsg = document.querySelector('.form-confirmation-msg');
+      if (!confirmationMsg) {
+        confirmationMsg = document.createElement('div');
+        confirmationMsg.className = 'form-confirmation-msg';
+        confirmationMsg.style.display = 'none';
+        confirmationMsg.style.marginTop = '1.2rem';
+        confirmationMsg.style.background = 'rgba(100,255,218,0.12)';
+        confirmationMsg.style.color = '#64ffda';
+        confirmationMsg.style.fontWeight = '700';
+        confirmationMsg.style.fontSize = '1.08rem';
+        confirmationMsg.style.textAlign = 'center';
+        confirmationMsg.style.borderRadius = '12px';
+        confirmationMsg.style.padding = '1rem 0.5rem';
+        form.parentNode.appendChild(confirmationMsg);
+      }
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const params = {
+          name: form.prenom.value,
+          email: form.email.value,
+          message: form.message.value,
+        };
+        emailjs.send('service_1zzplg4', 'template_w8ydna5', params)
+          .then(() => {
+            form.reset();
+            confirmationMsg.textContent = '✅ Votre message a bien été envoyé !';
+            confirmationMsg.style.display = 'block';
+          })
+          .catch((error) => {
+            console.log('Erreur EmailJS :', error);
+            confirmationMsg.textContent = '❌ Une erreur est survenue, veuillez réessayer.';
+            confirmationMsg.style.display = 'block';
+          });
+      });
+    }
+  </script>
 </body>
 </html> 
