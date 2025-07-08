@@ -362,62 +362,63 @@ body {
   .container {
     width: 98%;
   }
+  .logo {
+    font-size: 1rem !important;
+    letter-spacing: 1.2px;
+    word-break: break-word;
+    white-space: nowrap;
+    display: inline-block;
+    padding-left: 12px;
+  }
   .nav-links {
-    gap: 1rem;
-    font-size: 0.98rem;
+    font-size: 0.85rem;
+    gap: 0.5rem;
   }
   .section {
-    padding: 60px 0 30px 0;
-    animation: slideUpFade 0.8s ease-in-out;
-  }
-  .projets-section {
-    padding: 10px 0 30px 0;
-  }
-  .projets-section .projets-grid {
-    grid-template-columns: 1fr;
+    padding: 30px 0 15px 0;
   }
   .footer-content {
-    font-size: 0.95rem;
-  }
-  .container, .contact-form, .projet-card {
-    background: rgba(17,34,64,0.7);
-    backdrop-filter: blur(8px) saturate(1.2);
-    border-radius: 18px;
-    box-shadow: 0 4px 24px rgba(100,255,218,0.10);
+    font-size: 0.8rem;
   }
   .accueil-section {
-    min-height: 90vh;
-    padding: 40px 0 20px 0;
+    min-height: 80vh;
+    padding: 20px 0 10px 0;
   }
   .photo-profil {
-    width: 100px;
-    height: 100px;
-    margin-bottom: 1rem;
-    border-width: 3px;
+    width: 210px;
+    height: 210px;
   }
-  .accroche {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin: 0.7rem 0 1.2rem 0;
+  .accroche, .apropos-section .bio, .projet-card p, .typing-accroche {
+    font-size: 0.95rem;
   }
-  .accueil-btns {
-    flex-direction: column;
-    gap: 0.7rem;
+  .btn, .btn-projet {
+    font-size: 0.85rem;
+    padding: 0.5rem 0.8rem;
+    border-radius: 16px;
   }
-  .btn {
-    font-size: 1.05rem;
-    padding: 0.7rem 1.2rem;
-    border-radius: 24px;
-    box-shadow: 0 2px 8px rgba(100,255,218,0.13);
-    background-image: linear-gradient(120deg, #64ffda 0%, #52eac4 100%);
-    color: #0a192f;
-    font-weight: 800;
-    letter-spacing: 0.5px;
+  h1, h2, h3, h4, h5 {
+    font-size: 1.1rem !important;
   }
-  .btn:active {
-    transform: scale(0.97);
-    background: #52eac4;
-    box-shadow: 0 0 12px #52eac455;
+  .skills-list li {
+    font-size: 0.9rem;
+  }
+  .projet-card h3 {
+    font-size: 1rem;
+  }
+  .projet-card {
+    padding: 0.5rem 0.1rem 0.7rem 0.1rem;
+  }
+  .form-group label {
+    font-size: 0.85rem;
+  }
+  .form-group input, .form-group textarea {
+    font-size: 0.9rem;
+    padding: 0.7rem 0.7rem 0.5rem 0.7rem;
+  }
+  .contact-btn {
+    font-size: 0.9rem;
+    padding: 0.7rem 0;
+    border-radius: 18px;
   }
   .projet-card {
     min-width: 0;
@@ -436,6 +437,112 @@ body {
   }
   .social-links a:active {
     transform: scale(1.3) rotate(4deg);
+  }
+  .hero-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 0.5rem;
+  }
+  .hero-content h1 {
+    font-size: 1.1rem;
+    word-break: break-word;
+    text-align: center;
+    margin-bottom: 0.7rem;
+    width: 100%;
+  }
+  .typing-accroche {
+    max-width: 95vw;
+    word-break: break-word;
+    text-align: center;
+    margin-bottom: 1.2rem;
+  }
+  .nav-toggle {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: 0;
+    margin-left: auto;
+    z-index: 100;
+  }
+  .nav-container {
+    position: relative;
+  }
+}
+@media (max-width: 500px) {
+  .logo {
+    font-size: 1rem !important;
+    word-break: break-word;
+    white-space: nowrap;
+    display: inline-block;
+    padding-left: 12px;
+  }
+  .nav-links {
+    font-size: 0.75rem;
+  }
+  .footer-content {
+    font-size: 0.7rem;
+  }
+  .accroche, .apropos-section .bio, .projet-card p, .typing-accroche {
+    font-size: 0.85rem;
+  }
+  .btn, .btn-projet {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.6rem;
+    border-radius: 12px;
+  }
+  h1, h2, h3, h4, h5 {
+    font-size: 0.95rem !important;
+  }
+  .skills-list li {
+    font-size: 0.8rem;
+  }
+  .projet-card h3 {
+    font-size: 0.9rem;
+  }
+  .form-group label {
+    font-size: 0.75rem;
+  }
+  .form-group input, .form-group textarea {
+    font-size: 0.8rem;
+    padding: 0.5rem 0.5rem 0.3rem 0.5rem;
+  }
+  .contact-btn {
+    font-size: 0.8rem;
+    padding: 0.5rem 0;
+    border-radius: 12px;
+  }
+  .projet-card {
+    min-width: 98vw;
+    max-width: 99vw;
+    padding: 0.7rem 0.2rem 1rem 0.2rem;
+  }
+  .hero-content h1 {
+    font-size: 0.95rem;
+    word-break: break-word;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    width: 100%;
+  }
+  .typing-accroche {
+    font-size: 0.8rem;
+    max-width: 98vw;
+    word-break: break-word;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .nav-toggle {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: 0;
+    margin-left: auto;
+    z-index: 100;
+  }
+  .nav-container {
+    position: relative;
   }
 }
 
