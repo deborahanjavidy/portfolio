@@ -49,59 +49,7 @@ if(form) {
       });
   });
 }
-
-// Menu hamburger mobile
-const navToggle = document.querySelector('.nav-toggle');
-const navLinks = document.querySelector('.nav-links');
-
-if (navToggle && navLinks) {
-  navToggle.addEventListener('click', () => {
-    const isOpen = navLinks.classList.toggle('open');
-    navToggle.classList.toggle('open');
-    document.body.classList.toggle('menu-open', isOpen);
-    navToggle.setAttribute('aria-expanded', isOpen);
-  });
-  // Fermer le menu au clic sur un lien
-  navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('open');
-      navToggle.classList.remove('open');
-      document.body.classList.remove('menu-open');
-      navToggle.setAttribute('aria-expanded', false);
-    });
-  });
-  // Fermer le menu si on clique en dehors
-  document.addEventListener('click', (e) => {
-    if (navLinks.classList.contains('open') && !navLinks.contains(e.target) && !navToggle.contains(e.target)) {
-      navLinks.classList.remove('open');
-      navToggle.classList.remove('open');
-      document.body.classList.remove('menu-open');
-      navToggle.setAttribute('aria-expanded', false);
-    }
-  });
-}
-
-// Texte dynamique sur l'accueil
-const accrochePhrases = [
-  "créateur d'expériences web élégantes et performantes.",
-  "spécialiste du responsive et du design moderne.",
-  "fan d'animations et d'interfaces interactives.",
-  "toujours à la recherche de nouveaux défis.",
-  "prêt à donner vie à vos idées !"
-];
-const accrocheEl = document.getElementById('accroche-dynamique');
-let accrocheIndex = 0;
-if (accrocheEl) {
-  setInterval(() => {
-    accrocheEl.classList.add('fade-out');
-    setTimeout(() => {
-      accrocheIndex = (accrocheIndex + 1) % accrochePhrases.length;
-      accrocheEl.textContent = accrochePhrases[accrocheIndex];
-      accrocheEl.classList.remove('fade-out');
-    }, 400);
-  }, 2500);
-}
-
+// (JS du menu mobile déplacé dans menu-mobile.js)
 // Effet machine à écrire sur l'accueil
 const typingTexts = [
   "Je développe des interfaces modernes et animées.",
