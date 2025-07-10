@@ -241,20 +241,67 @@
         display: block !important;
       }
     }
+    .logo {
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-weight: 900;
+      font-size: 2.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #0a192f 60%, #64ffda 100%);
+      box-shadow: 0 0 16px #64ffda55, 0 2px 8px #0a192f44;
+      position: relative;
+      overflow: hidden;
+      margin-right: 12px;
+      transition: box-shadow 0.3s, background 0.3s;
+    }
+    .dp-3d {
+      display: inline-block;
+      color: #fff;
+      text-shadow:
+        1px 1px 0 #52eac4,
+        2px 2px 0 #0a192f,
+        3px 3px 2px #0a192f99,
+        0 4px 12px #64ffda99;
+      letter-spacing: -2px;
+      font-size: 2.2rem;
+      transform: skew(-8deg, 0deg) scaleX(1.08);
+      filter: brightness(1.08) drop-shadow(0 2px 8px #64ffda55);
+    }
+    .logo:hover {
+      background: linear-gradient(135deg, #64ffda 60%, #0a192f 100%);
+      box-shadow: 0 0 32px #64ffda99, 0 4px 24px #0a192f66;
+    }
   </style>
 </head>
 <body class="contact-page">
   <header class="navbar">
     <div class="container nav-container">
-      <div class="logo">Déborah Portfolio</div>
-      <!-- Hamburger supprimé -->
+      <div class="logo">
+        <span class="dp-3d">D</span><span class="dp-3d">P</span>
+      </div>
+      <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" style="display:none;"></button>
       <nav>
         <ul class="nav-links">
           <li><a href="index.html">Accueil</a></li>
           <li><a href="projets.html">Projets</a></li>
           <li><a href="cv.html">Mon CV</a></li>
-          <li><a href="contact.html" class="active">Contact</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="parametres.html">Paramètres</a></li>
         </ul>
+        <!-- Panel latéral pour mobile -->
+        <div class="mobile-nav-panel" aria-hidden="true">
+          <ul class="mobile-nav-links">
+            <li><a href="index.html"><svg width="28" height="28" fill="currentColor"><use href="#icon-home"/></svg> Accueil</a></li>
+            <li><a href="projets.html"><svg width="28" height="28" fill="currentColor"><use href="#icon-folder"/></svg> Projets</a></li>
+            <li><a href="cv.html"><svg width="28" height="28" fill="currentColor"><use href="#icon-cv"/></svg> Mon CV</a></li>
+            <li><a href="contact.html"><svg width="28" height="28" fill="currentColor"><use href="#icon-mail"/></svg> Contact</a></li>
+            <li><a href="parametres.html"><svg width="28" height="28" fill="currentColor"><use href="#icon-cog"/></svg> Paramètres</a></li>
+          </ul>
+        </div>
       </nav>
     </div>
   </header>

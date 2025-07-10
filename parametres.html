@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paramètres</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+.logo {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 900;
+  font-size: 2.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0a192f 60%, #64ffda 100%);
+  box-shadow: 0 0 16px #64ffda55, 0 2px 8px #0a192f44;
+  position: relative;
+  overflow: hidden;
+  margin-right: 12px;
+  transition: box-shadow 0.3s, background 0.3s;
+}
+.dp-3d {
+  display: inline-block;
+  color: #fff;
+  text-shadow:
+    1px 1px 0 #52eac4,
+    2px 2px 0 #0a192f,
+    3px 3px 2px #0a192f99,
+    0 4px 12px #64ffda99;
+  letter-spacing: -2px;
+  font-size: 2.2rem;
+  transform: skew(-8deg, 0deg) scaleX(1.08);
+  filter: brightness(1.08) drop-shadow(0 2px 8px #64ffda55);
+}
+.logo:hover {
+  background: linear-gradient(135deg, #64ffda 60%, #0a192f 100%);
+  box-shadow: 0 0 32px #64ffda99, 0 4px 24px #0a192f66;
+}
+</style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="container nav-container">
+      <div class="logo">
+        <span class="dp-3d">D</span><span class="dp-3d">P</span>
+      </div>
+      <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" style="display:none;"></button>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="projets.html">Projets</a></li>
+          <li><a href="cv.html">Mon CV</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="parametres.html">Paramètres</a></li>
+        </ul>
+        <!-- Panel latéral pour mobile -->
+        <div class="mobile-nav-panel" aria-hidden="true">
+          <ul class="mobile-nav-links">
+            <li><a href="index.html"><svg width="28" height="28" fill="currentColor"><use href="#icon-home"/></svg> Accueil</a></li>
+            <li><a href="projets.html"><svg width="28" height="28" fill="currentColor"><use href="#icon-folder"/></svg> Projets</a></li>
+            <li><a href="cv.html"><svg width="28" height="28" fill="currentColor"><use href="#icon-cv"/></svg> Mon CV</a></li>
+            <li><a href="contact.html"><svg width="28" height="28" fill="currentColor"><use href="#icon-mail"/></svg> Contact</a></li>
+            <li><a href="parametres.html"><svg width="28" height="28" fill="currentColor"><use href="#icon-cog"/></svg> Paramètres</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="section" style="min-height:60vh;display:flex;align-items:center;justify-content:center;">
+      <div class="container" style="text-align:center;">
+        <h1 style="font-size:2rem;"></h1>
+        <p>Encore videeee</p>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="social-links">
+        <a href="#" aria-label="LinkedIn"><svg width="24" height="24" fill="currentColor"><use href="#icon-linkedin"/></svg></a>
+        <a href="https://github.com/deborahanjavidy" aria-label="GitHub"><svg width="24" height="24" fill="currentColor"><use href="#icon-github"/></svg></a>
+        <a href="https://web.facebook.com/deborah.anjavidy?locale=fr_FR" aria-label="Facebook"><svg width="24" height="24" fill="currentColor"><use href="#icon-facebook"/></svg></a>
+      </div>
+      <p>&copy; 2024 Déborah Kristen ANJAVIDY. Tous droits réservés.</p>
+    </div>
+    <svg style="display:none;">
+      <symbol id="icon-linkedin" viewBox="0 0 24 24"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.28c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm15.5 11.28h-3v-5.6c0-1.34-.03-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97v5.7h-3v-10h2.89v1.36h.04c.4-.75 1.38-1.54 2.84-1.54 3.04 0 3.6 2 3.6 4.59v5.59z"/></symbol>
+      <symbol id="icon-github" viewBox="0 0 24 24"><path d="M12 .5c-6.62 0-12 5.38-12 12 0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58 0-.29-.01-1.05-.02-2.05-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.74.08-.74 1.2.08 1.83 1.23 1.83 1.23 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.34-5.47-5.97 0-1.32.47-2.39 1.23-3.23-.12-.3-.53-1.52.12-3.18 0 0 1.01-.32 3.3 1.23.96-.27 1.98-.41 3-.41s2.04.14 3 .41c2.28-1.55 3.29-1.23 3.29-1.23.65 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.23 0 4.64-2.81 5.67-5.48 5.97.43.37.81 1.1.81 2.22 0 1.6-.01 2.89-.01 3.28 0 .32.21.7.82.58 4.77-1.59 8.21-6.09 8.21-11.39 0-6.62-5.38-12-12-12z"/></symbol>
+      <symbol id="icon-facebook" viewBox="0 0 24 24"><path d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 23.408.595 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.406 24 24 23.408 24 22.674V1.326C24 .592 23.406 0 22.675 0"/></symbol>
+      <symbol id="icon-home" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></symbol>
+      <symbol id="icon-folder" viewBox="0 0 24 24"><path d="M10 4H2v16h20V6H12l-2-2z"/></symbol>
+      <symbol id="icon-cv" viewBox="0 0 24 24"><path d="M6 2a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6H6zm7 7V3.5L18.5 9H13z"/></symbol>
+      <symbol id="icon-mail" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></symbol>
+      <symbol id="icon-cog" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></symbol>
+    </svg>
+  </footer>
+  <script src="script.js"></script>
+  <script src="menu-mobile.js"></script>
+</body>
+</html> 
