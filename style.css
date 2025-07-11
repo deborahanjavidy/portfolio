@@ -1679,29 +1679,30 @@ body > main {
   }
   .nav-icons {
     display: flex !important;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    gap: 0.7rem;
+    justify-content: flex-end !important;
+    align-items: center !important;
+    width: 100% !important;
+    gap: 1rem !important;
     margin: 0;
     padding: 0.2rem 0;
     background: transparent;
   }
   .nav-icons li a {
-    color: #64ffda !important;
+    color: #fff !important;
     background: rgba(10,25,47,0.95) !important;
     box-shadow: 0 2px 8px rgba(100,255,218,0.10);
     font-size: 1.5rem;
     width: 44px;
     height: 44px;
+    margin: 0 4px !important;
   }
   .nav-icons li a svg {
     width: 28px;
     height: 28px;
     display: block;
     filter: none;
-    color: #64ffda;
-    fill: #64ffda;
+    color: #fff !important;
+    fill: #fff !important;
   }
   .nav-icons li a:hover, .nav-icons li a:focus {
     background: #112240 !important;
